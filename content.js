@@ -11,7 +11,7 @@ function loadSpeed() {
   const host = location.hostname;
   chrome.storage.local.get([host, 'defaultSpeed'], (data) => {
     const speed = data[host] || data['defaultSpeed'] || 1.0;
-    setSpeed(speed, false);
+    setSpeed(speed, false, false);
   });
 }
 
@@ -40,14 +40,14 @@ function getVideos(root = document) {
   return [...new Set(videos)];
 }
 
-function setSpeed(speed, save = true) {
+function setSpeed(speed, save = true, showOsd = true) {
   speed = Math.max(MIN_SPEED, Math.min(MAX_SPEED, speed));
   speed = Math.round(speed * 100) / 100;
   currentSpeed = speed;
 
   getVideos().forEach(v => { v.playbackRate = speed; });
 
-  showOverlay(speed);
+  if (showOsd) showOverlay(speed);
   if (save) saveSpeed(speed);
 
   // Popup'a bildir
