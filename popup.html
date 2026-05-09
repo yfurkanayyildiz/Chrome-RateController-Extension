@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+  <meta charset="UTF-8">
+  <style>
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    body {
+      width: 260px;
+      font-family: 'Segoe UI', sans-serif;
+      background: #1a1a2e;
+      color: #eee;
+      padding: 18px;
+      user-select: none;
+    }
+    h2 {
+      font-size: 15px;
+      font-weight: 600;
+      margin-bottom: 14px;
+      color: #a78bfa;
+      letter-spacing: 0.5px;
+    }
+    .speed-display {
+      text-align: center;
+      font-size: 38px;
+      font-weight: bold;
+      color: #fff;
+      margin-bottom: 10px;
+      font-variant-numeric: tabular-nums;
+    }
+    input[type=range] {
+      width: 100%;
+      accent-color: #a78bfa;
+      margin-bottom: 14px;
+      cursor: pointer;
+    }
+    .buttons {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 6px;
+      margin-bottom: 14px;
+    }
+    button {
+      background: #2d2d4e;
+      color: #eee;
+      border: none;
+      border-radius: 6px;
+      padding: 7px 4px;
+      font-size: 13px;
+      cursor: pointer;
+      transition: background 0.15s;
+    }
+    button:hover { background: #a78bfa; color: #fff; }
+    button.active { background: #a78bfa; color: #fff; }
+    .row {
+      display: flex;
+      gap: 6px;
+    }
+    .row button {
+      flex: 1;
+      font-size: 13px;
+      padding: 8px;
+    }
+    .hint {
+      margin-top: 12px;
+      font-size: 11px;
+      color: #888;
+      text-align: center;
+    }
+    kbd {
+      background: #333;
+      border-radius: 3px;
+      padding: 1px 5px;
+      font-family: monospace;
+    }
+  </style>
+</head>
+<body>
+  <h2>🎬 Video Hızlandırıcı</h2>
+  <div class="speed-display" id="speedDisplay">1.00x</div>
+  <input type="range" id="slider" min="0.25" max="4" step="0.05" value="1">
+  <div class="buttons" id="presets"></div>
+  <div class="row">
+    <button id="btnMinus">− 0.25</button>
+    <button id="btnReset">Sıfırla</button>
+    <button id="btnPlus">+ 0.25</button>
+  </div>
+  <div class="hint"><kbd>D</kbd> hızlan &nbsp; <kbd>S</kbd> yavaşla &nbsp; <kbd>R</kbd> sıfırla</div>
+  <script src="popup.js"></script>
+</body>
+</html>
