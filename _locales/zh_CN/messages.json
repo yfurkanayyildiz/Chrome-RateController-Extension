@@ -1,0 +1,10 @@
+{
+  "appName": {
+    "message": "视频速度控制器",
+    "description": "扩展名称"
+  },
+  "appDesc": {
+    "message": "在任何网站上加速或减慢视频播放",
+    "description": "扩展描述"
+  }
+}

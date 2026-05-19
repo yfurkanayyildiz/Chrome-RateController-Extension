@@ -1,0 +1,10 @@
+{
+  "appName": {
+    "message": "Video Speed Controller",
+    "description": "Extension name"
+  },
+  "appDesc": {
+    "message": "Speed up or slow down videos on any website",
+    "description": "Extension description"
+  }
+}

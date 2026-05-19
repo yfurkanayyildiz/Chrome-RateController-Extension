@@ -1,0 +1,10 @@
+{
+  "appName": {
+    "message": "Video Hızlandırıcı",
+    "description": "Eklentinin adı"
+  },
+  "appDesc": {
+    "message": "Tüm sitelerdeki videoları hızlandır veya yavaşlat",
+    "description": "Eklentinin açıklaması"
+  }
+}

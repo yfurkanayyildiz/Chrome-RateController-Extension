@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="tr">
+<html>
 <head>
   <meta charset="UTF-8">
   <style>
@@ -12,13 +12,29 @@
       padding: 18px;
       user-select: none;
     }
+    .header {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      margin-bottom: 14px;
+    }
     h2 {
       font-size: 15px;
       font-weight: 600;
-      margin-bottom: 14px;
       color: #a78bfa;
       letter-spacing: 0.5px;
     }
+    .lang-select {
+      background: #2d2d4e;
+      color: #eee;
+      border: none;
+      border-radius: 6px;
+      padding: 4px 6px;
+      font-size: 12px;
+      cursor: pointer;
+      outline: none;
+    }
+    .lang-select:hover { background: #3d3d6e; }
     .speed-display {
       text-align: center;
       font-size: 38px;
@@ -75,16 +91,24 @@
   </style>
 </head>
 <body>
-  <h2>🎬 Video Hızlandırıcı</h2>
+  <div class="header">
+    <h2 id="title">🎬 Video Hızlandırıcı</h2>
+    <select class="lang-select" id="langSelect">
+      <option value="tr">🇹🇷 TR</option>
+      <option value="en">🇬🇧 EN</option>
+      <option value="es">🇪🇸 ES</option>
+      <option value="zh">🇨🇳 中文</option>
+    </select>
+  </div>
   <div class="speed-display" id="speedDisplay">1.00x</div>
   <input type="range" id="slider" min="0.25" max="4" step="0.05" value="1">
   <div class="buttons" id="presets"></div>
   <div class="row">
     <button id="btnMinus">− 0.25</button>
-    <button id="btnReset">Sıfırla</button>
+    <button id="btnReset">-</button>
     <button id="btnPlus">+ 0.25</button>
   </div>
-  <div class="hint"><kbd>D</kbd> hızlan &nbsp; <kbd>S</kbd> yavaşla &nbsp; <kbd>R</kbd> sıfırla</div>
+  <div class="hint" id="hint"></div>
   <script src="popup.js"></script>
 </body>
 </html>
